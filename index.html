@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="SHORTCUT ICON" href="img/FavIcon.jpg">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <meta name="viewport" content="width=device-width">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>Favorit-car | Аренда, прокат авто в Сочи, Адлере, Красной поляне</title>
+</head>
+<body>
+<main>
+
+    <div style="display: none;" class="call-popup">
+        <div class="call-window">
+            <div class="call__title">Заказать звонок</div>
+            <div class="call__subtitle">Перезвоним в течении 20 минут</div>
+            <input id="call-name" class="input call-input" placeholder="Имя">
+            <input id="call-tel" class="input call-input" placeholder="Телефон">
+            <button class="btn call__btn" onclick="CallSending()">Отправить</button>
+            <div class="success">Заявка успешно отправленна!</div>
+        </div>
+    </div>
+
+    <header>
+        <div class="header__logo"></div>
+        <div class="header__content">
+            <div class="header__phone phone">
+                <p class="phone__number">8 (938) 455-33-38</p>
+                <p class="phone__title">круглосуточно</p>
+            </div>
+            <button class="header__btn animation">Заказать звонок</button>
+        </div>
+        <div class="header__phone-btn" onclick="HeaderPhoneMenu(this)"><img src="img/phone.png" alt="phone"></div>
+
+        <div class="header__tel-menu">
+            <div class="header__phone phone">
+                <p class="phone__number">8 (938) 455-33-38</p>
+                <p class="phone__title">круглосуточно</p>
+            </div>
+            <button class="header__btn animation">Заказать звонок</button>
+        </div>
+    </header>
+
+    <section class="request">
+        <div class="content">
+            <div class="request__image image">
+                <div class="image__title">С заботой о безопасности</div>
+                <div class="image__subtitle">Проводим дизенфекцию салона автомобиля<br>перед <strong>каждой
+                    вашей</strong> арендой
+                </div>
+            </div>
+
+            <form id="request-form" action="#" class="request__form">
+
+                <div class="request__select">
+                    <div class="request__select-current">Выберите автомобиль</div>
+                    <div style="display: none;" class="select">
+                        <span class="value">Автомобиль</span>
+                        <span id="00000001" class="value">Нyundаi Sоlаris</span>
+                        <span id="00000002" class="value">Hyundai ix35</span>
+                        <span id="00000003" class="value">Hyundai i30</span>
+                        <span id="00000004" class="value">KIA Rio</span>
+                        <span id="00000005" class="value">Volkswagen Polo</span>
+                        <span id="00000006" class="value">Skoda Rapid</span>
+                        <span id="00000007" class="value">Opel Astra</span>
+                        <span id="00000008" class="value">Микроавтобус</span>
+                    </div>
+                </div>
+
+                <input id="name" type="text" class="input request__input" placeholder="Имя">
+                <input id="tel" type="text" class="input request__input" placeholder="+7 (___) ___-__-__">
+                <button id="request-btn" type="button" class="btn request__btn" onclick="CheckFields()">Оставить
+                    заявку
+                </button>
+                <div class="success">Заявка успешно отправлена!</div>
+            </form>
+        </div>
+    </section>
+
+    <div class="application-popup">
+        <div class="application-window">
+            <div class="application__title">Заявка на бронирование</div>
+            <div class="application__model"></div>
+            <input id="application-name" class="input application__input" placeholder="Введите имя">
+            <input id="application-tel" class="input application__input" placeholder="Введите телефон">
+            <button class="btn application__btn" onclick="ApplicationSending(this)">Отправить заявку</button>
+            <div class="success">Заявка успешно отправлена!</div>
+        </div>
+    </div>
+
+    <section class="cars">
+        <div class="content">
+            <!-- id is the number of car-item, for function CarDetailing -->
+            <div class="cars-line">
+                <div id="1" class="car-item">
+                    <div class="car-item__header">
+                        <div class="car-item__model">
+                            <div class="car-item__about-model car-model">Нyundаi Sоlаris</div>
+                            <div class="car-item__about-model car-price">от 1000 руб</div>
+                            <div class="car-item__about-model car-class">Класс стандарт</div>
+                            <div class="car-item__about-model car-day">за сутки</div>
+                        </div>
+                    </div>
+                    <img class="car-item__img" src="img/car1.png">
+                    <div class="car-item__specific">
+                        <div class="car-item__specific--quantity"><span class="car-item__icon"></span>5</div>
+                        <div class="car-item__specific--luggage"><span class="car-item__icon"></span>2</div>
+                        <div class="car-item__specific--type"><span class="car-item__icon"></span>AT</div>
+                    </div>
+
+                    <div class="tarifs__menu animation">
+                        <div class="tarifs__item">
+                            <div class="tarifs__day">от 1 дня</div>
+                            <div class="tarifs__value">1200 руб.</div>
+                        </div>
+                        <div class="tarifs__item">
+                            <div class="tarifs__day">от 10 дней</div>
+                            <div class="tarifs__value">1000 руб.</div>
+                        </div>
+                    </div>
+
+                    <div class="car-item__buttons">
+
+                        <div class="car-item__price">от 1000 руб.</div>
+                        <button class="btn car-item__btn animation" onclick="CarDetailingFullVersion(this)">Подробнее
+                        </button>
+                    </div>
+                    <div class="car-item__buttons--mini">
+                        <button class="tarifs" onclick="CarDetailingMiniVersion(this)">Показать тарифы</button>
+                        <button class="btn car-item__btn animation" onclick="ApplicationDisplaying(this)">Отправить
+                            заявку
+                        </button>
+                    </div>
+                </div>
+
+
+                <div id="2" class="car-item">
+                    <div class="car-item__header">
+                        <div class="car-item__model">
+                            <div class="car-item__about-model car-model">Hyundai ix35</div>
+                            <div class="car-item__about-model car-price">от 1000 руб</div>
+                            <div class="car-item__about-model car-class">Класс кроссоверы</div>
+                            <div class="car-item__about-model car-day">за сутки</div>
+                        </div>
+                    </div>
+                    <img class="car-item__img" src="img/car1.png">
+                    <div class="car-item__specific">
+                        <div class="car-item__specific--quantity"><span class="car-item__icon"></span>5</div>
+                        <div class="car-item__specific--luggage"><span class="car-item__icon"></span>2</div>
+                        <div class="car-item__specific--type"><span class="car-item__icon"></span>AT</div>
+                    </div>
+
+                    <div class="tarifs__menu animation">
+                        <div class="tarifs__item">
+                            <div class="tarifs__day">от 1 дня</div>
+                            <div class="tarifs__value">1200 руб.</div>
+                        </div>
+                        <div class="tarifs__item">
+                            <div class="tarifs__day">от 10 дней</div>
+                            <div class="tarifs__value">1000 руб.</div>
+                        </div>
+                    </div>
+
+                    <div class="car-item__buttons">
+
+                        <div class="car-item__price">от 1000 руб.</div>
+                        <button class="btn car-item__btn animation" onclick="CarDetailingFullVersion(this)">Подробнее
+                        </button>
+                    </div>
+                    <div class="car-item__buttons--mini">
+                        <button class="tarifs" onclick="CarDetailingMiniVersion(this)">Показать тарифы</button>
+                        <button class="btn car-item__btn animation" onclick="ApplicationDisplaying(this)">Отправить
+                            заявку
+                        </button>
+                    </div>
+                </div>
+                <div id="3" class="car-item">
+                    <div class="car-item__header">
+                        <div class="car-item__model">
+                            <div class="car-item__about-model car-model">Hyundai i30</div>
+                            <div class="car-item__about-model car-price">от 1000 руб</div>
+                            <div class="car-item__about-model car-class">Класс стандарт</div>
+                            <div class="car-item__about-model car-day">за сутки</div>
+                        </div>
+                    </div>
+                    <img class="car-item__img" src="img/car1.png">
+                    <div class="car-item__specific">
+                        <div class="car-item__specific--quantity"><span class="car-item__icon"></span>5</div>
+                        <div class="car-item__specific--luggage"><span class="car-item__icon"></span>2</div>
+                        <div class="car-item__specific--type"><span class="car-item__icon"></span>AT</div>
+                    </div>
+
+                    <div class="tarifs__menu animation">
+                        <div class="tarifs__item">
+                            <div class="tarifs__day">от 1 дня</div>
+                            <div class="tarifs__value">1200 руб.</div>
+                        </div>
+                        <div class="tarifs__item">
+                            <div class="tarifs__day">от 10 дней</div>
+                            <div class="tarifs__value">1000 руб.</div>
+                        </div>
+                    </div>
+
+                    <div class="car-item__buttons">
+
+                        <div class="car-item__price">от 1000 руб.</div>
+                        <button class="btn car-item__btn animation" onclick="CarDetailingFullVersion(this)">Подробнее
+                        </button>
+                    </div>
+                    <div class="car-item__buttons--mini">
+                        <button class="tarifs" onclick="CarDetailingMiniVersion(this)">Показать тарифы</button>
+                        <button class="btn car-item__btn animation" onclick="ApplicationDisplaying(this)">Отправить
+                            заявку
+                        </button>
+                    </div>
+                </div>
+                <div id="4" class="car-item">
+                    <div class="car-item__header">
+                        <div class="car-item__model">
+                            <div class="car-item__about-model car-model">KIA Rio</div>
+                            <div class="car-item__about-model car-price">от 1000 руб</div>
+                            <div class="car-item__about-model car-class">Класс стандарт</div>
+                            <div class="car-item__about-model car-day">за сутки</div>
+                        </div>
+                    </div>
+                    <img class="car-item__img" src="img/car1.png">
+                    <div class="car-item__specific">
+                        <div class="car-item__specific--quantity"><span class="car-item__icon"></span>5</div>
+                        <div class="car-item__specific--luggage"><span class="car-item__icon"></span>2</div>
+                        <div class="car-item__specific--type"><span class="car-item__icon"></span>AT</div>
+                    </div>
+
+                    <div class="tarifs__menu animation">
+                        <div class="tarifs__item">
+                            <div class="tarifs__day">от 1 дня</div>
+                            <div class="tarifs__value">1200 руб.</div>
+                        </div>
+                        <div class="tarifs__item">
+                            <div class="tarifs__day">от 10 дней</div>
+                            <div class="tarifs__value">1000 руб.</div>
+                        </div>
+                    </div>
+
+                    <div class="car-item__buttons">
+
+                        <div class="car-item__price">от 1000 руб.</div>
+                        <button class="btn car-item__btn animation" onclick="CarDetailingFullVersion(this)">Подробнее
+                        </button>
+                    </div>
+                    <div class="car-item__buttons--mini">
+                        <button class="tarifs" onclick="CarDetailingMiniVersion(this)">Показать тарифы</button>
+                        <button class="btn car-item__btn animation" onclick="ApplicationDisplaying(this)">Отправить
+                            заявку
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="cars-line">
+                <div id="5" class="car-item">
+                    <div class="car-item__header">
+                        <div class="car-item__model">
+                            <div class="car-item__about-model car-model">Volkswagen Polo</div>
+                            <div class="car-item__about-model car-price">от 1000 руб</div>
+                            <div class="car-item__about-model car-class">Класс стандарт</div>
+                            <div class="car-item__about-model car-day">за сутки</div>
+                        </div>
+                    </div>
+                    <img class="car-item__img" src="img/car1.png">
+                    <div class="car-item__specific">
+                        <div class="car-item__specific--quantity"><span class="car-item__icon"></span>5</div>
+                        <div class="car-item__specific--luggage"><span class="car-item__icon"></span>2</div>
+                        <div class="car-item__specific--type"><span class="car-item__icon"></span>AT</div>
+                    </div>
+
+                    <div class="tarifs__menu animation">
+                        <div class="tarifs__item">
+                            <div class="tarifs__day">от 1 дня</div>
+                            <div class="tarifs__value">1200 руб.</div>
+                        </div>
+                        <div class="tarifs__item">
+                            <div class="tarifs__day">от 10 дней</div>
+                            <div class="tarifs__value">1000 руб.</div>
+                        </div>
+                    </div>
+
+                    <div class="car-item__buttons">
+
+                        <div class="car-item__price">от 1000 руб.</div>
+                        <button class="btn car-item__btn animation" onclick="CarDetailingFullVersion(this)">Подробнее
+                        </button>
+                    </div>
+                    <div class="car-item__buttons--mini">
+                        <button class="tarifs" onclick="CarDetailingMiniVersion(this)">Показать тарифы</button>
+                        <button class="btn car-item__btn animation" onclick="ApplicationDisplaying(this)">Отправить
+                            заявку
+                        </button>
+                    </div>
+                </div>
+                <div id="6" class="car-item">
+                    <div class="car-item__header">
+                        <div class="car-item__model">
+                            <div class="car-item__about-model car-model">Skoda Rapid</div>
+                            <div class="car-item__about-model car-price">от 1000 руб</div>
+                            <div class="car-item__about-model car-class">Класс стандарт</div>
+                            <div class="car-item__about-model car-day">за сутки</div>
+                        </div>
+                    </div>
+                    <img class="car-item__img" src="img/car1.png">
+                    <div class="car-item__specific">
+                        <div class="car-item__specific--quantity"><span class="car-item__icon"></span>5</div>
+                        <div class="car-item__specific--luggage"><span class="car-item__icon"></span>2</div>
+                        <div class="car-item__specific--type"><span class="car-item__icon"></span>AT</div>
+                    </div>
+
+                    <div class="tarifs__menu animation">
+                        <div class="tarifs__item">
+                            <div class="tarifs__day">от 1 дня</div>
+                            <div class="tarifs__value">1200 руб.</div>
+                        </div>
+                        <div class="tarifs__item">
+                            <div class="tarifs__day">от 10 дней</div>
+                            <div class="tarifs__value">1000 руб.</div>
+                        </div>
+                    </div>
+
+                    <div class="car-item__buttons">
+
+                        <div class="car-item__price">от 1000 руб.</div>
+                        <button class="btn car-item__btn animation" onclick="CarDetailingFullVersion(this)">Подробнее
+                        </button>
+                    </div>
+                    <div class="car-item__buttons--mini">
+                        <button class="tarifs" onclick="CarDetailingMiniVersion(this)">Показать тарифы</button>
+                        <button class="btn car-item__btn animation" onclick="ApplicationDisplaying(this)">Отправить
+                            заявку
+                        </button>
+                    </div>
+                </div>
+                <div id="7" class="car-item">
+                    <div class="car-item__header">
+                        <div class="car-item__model">
+                            <div class="car-item__about-model car-model">Opel Astra</div>
+                            <div class="car-item__about-model car-price">от 1000 руб</div>
+                            <div class="car-item__about-model car-class">Класс стандарт</div>
+                            <div class="car-item__about-model car-day">за сутки</div>
+                        </div>
+                    </div>
+                    <img class="car-item__img" src="img/car1.png">
+                    <div class="car-item__specific">
+                        <div class="car-item__specific--quantity"><span class="car-item__icon"></span>5</div>
+                        <div class="car-item__specific--luggage"><span class="car-item__icon"></span>2</div>
+                        <div class="car-item__specific--type"><span class="car-item__icon"></span>AT</div>
+                    </div>
+
+                    <div class="tarifs__menu animation">
+                        <div class="tarifs__item">
+                            <div class="tarifs__day">от 1 дня</div>
+                            <div class="tarifs__value">1200 руб.</div>
+                        </div>
+                        <div class="tarifs__item">
+                            <div class="tarifs__day">от 10 дней</div>
+                            <div class="tarifs__value">1000 руб.</div>
+                        </div>
+                    </div>
+
+                    <div class="car-item__buttons">
+
+                        <div class="car-item__price">от 1000 руб.</div>
+                        <button class="btn car-item__btn animation" onclick="CarDetailingFullVersion(this)">Подробнее
+                        </button>
+                    </div>
+                    <div class="car-item__buttons--mini">
+                        <button class="tarifs" onclick="CarDetailingMiniVersion(this)">Показать тарифы</button>
+                        <button class="btn car-item__btn animation" onclick="ApplicationDisplaying(this)">Отправить
+                            заявку
+                        </button>
+                    </div>
+                </div>
+                <div id="8" class="car-item">
+                    <div class="car-item__header">
+                        <div class="car-item__model">
+                            <div class="car-item__about-model car-model">Микроавтобус</div>
+                            <div class="car-item__about-model car-price">от 1000 руб</div>
+                            <div class="car-item__about-model car-class">Класс микроавтобусы</div>
+                            <div class="car-item__about-model car-day">за сутки</div>
+                        </div>
+                    </div>
+                    <img class="car-item__img" src="img/car1.png">
+                    <div class="car-item__specific">
+                        <div class="car-item__specific--quantity"><span class="car-item__icon"></span>8</div>
+                        <div class="car-item__specific--luggage"><span class="car-item__icon"></span>2</div>
+                        <div class="car-item__specific--type"><span class="car-item__icon"></span>AT</div>
+                    </div>
+
+                    <div class="tarifs__menu animation">
+                        <div class="tarifs__item">
+                            <div class="tarifs__day">от 1 дня</div>
+                            <div class="tarifs__value">1200 руб.</div>
+                        </div>
+                        <div class="tarifs__item">
+                            <div class="tarifs__day">от 10 дней</div>
+                            <div class="tarifs__value">1000 руб.</div>
+                        </div>
+                    </div>
+
+                    <div class="car-item__buttons">
+
+                        <div class="car-item__price">от 1000 руб.</div>
+                        <button class="btn car-item__btn animation" onclick="CarDetailingFullVersion(this)">Подробнее
+                        </button>
+                    </div>
+                    <div class="car-item__buttons--mini">
+                        <button class="tarifs" onclick="CarDetailingMiniVersion(this)">Показать тарифы</button>
+                        <button class="btn car-item__btn animation" onclick="ApplicationDisplaying(this)">Отправить
+                            заявку
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="content">
+            <div class="features__title">Почему мы?</div>
+            <div class="features__subtitle">Причин много, но вот вкратце основные из них</div>
+            <div class="slider-wrapper">
+                <div class="arrow arrow-prev animation"></div>
+                <div class="features__slider">
+                    <div class="features__slide">
+                        <div class="features__slide-title">
+                            <div class="features__title-text">С доставкой на удобный вам адрес</div>
+                            <!-- <img src="img/suitcase.png" class="features__title-img"> -->
+                        </div>
+                        <div class="features__content">У нас есть автомобиль практически любой марки и класса. Доставим
+                            его вам в течении часа!
+                        </div>
+                    </div>
+                    <div class="features__slide">
+                        <div class="features__slide-title">
+                            <div class="features__title-text">Минимальный пакет документов</div>
+                            <!-- <img src="img/suitcase.png" class="features__title-img"> -->
+                        </div>
+                        <div class="features__content">Для аренды авто потребуется: паспорт, водительское удостоверение.
+                        </div>
+                    </div>
+                    <div class="features__slide">
+                        <div class="features__slide-title">
+                            <div class="features__title-text">Бесплатно!</div>
+                            <!-- <img src="img/suitcase.png" class="features__title-img"> -->
+                        </div>
+                        <div class="features__content">Детское кресло, багажник для лыж, сноуборда!
+                        </div>
+                    </div>
+                    <div class="features__slide">
+                        <div class="features__slide-title">
+                            <div class="features__title-text">Абсолютно все автомобили:</div>
+                            <!-- <img src="img/suitcase.png" class="features__title-img"> -->
+                        </div>
+                        <div class="features__content">Без рекламы, с АКПП и кондиционером, застрахованы, обслужены, выдаются на резине, соответствующей сезону
+                        </div>
+                    </div>
+                </div>
+                <div class="arrow arrow-next animation"></div>
+            </div>
+        </div>
+    </section>
+    <section class="articles">
+        <div class="content">
+            <p class="article__title">Аренда автомобилей в Сочи, Адлере, Красной поляне, Олимпийском парке.</p>
+            <p>Специализация нашей компании – аренда и прокат автомобилей в Сочи на выгодных условиях для каждого клиента. На сегодняшний день мы сделали все возможное, чтобы завоевать безупречную репутацию в сфере транспортных услуг и получить множество положительных отзывов от благодарных клиентов.</p>
+            <p>Широкий модельный ряд, индивидуальный подход и больший выбор дополнительных услуг способствовали тому, что прокат авто у нас – это выгодно, удобно и надежно.</p>
+            <p>Аренда автомобилей от нашей компании – это возможность для каждого в Сочи недорого взять напрокат надежное средство передвижения для поездок по любимому городу и за его пределами.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="content">
+
+            <div class="footer__content">
+<!--                 <div class="footer__socials">
+                    <div class="footer__logo"></div>
+                    <div class="footer__icon facebook animation"></div>
+                    <div class="footer__icon vk animation"></div>
+                    <div class="footer__icon youtube animation"></div>
+                    <div class="footer__icon odnoclassniki animation"></div>
+                    <div class="footer__icon instagram animation"></div>
+                </div> -->
+                <div class="footer__contacts">
+                    <div class="footer__subtitle">Справочный центр</div>
+                    <div class="footer__number">+7 (938) 455-33-38</div>
+                </div>
+            </div>
+            <div class="footer__info">Информация на данном сайте носит исключительно ознакомительный характер и не
+                является публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса РФ. <!-- Обеспокоены
+                конфиденциальностью информации? -->
+                <!-- <a href="">Прочитайте условия договора.</a></div> -->
+
+
+        </div>
+    </footer>
+</main>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/jquery.mask.min.js"></script>
+<script src="/js/FormMail.js"></script>
+<script type="text/javascript" src="slick/slick.js"></script>
+<script src="js/scripts.js"></script>
+
+</body>
+</html>
